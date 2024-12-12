@@ -7,6 +7,7 @@ import Users from './Users';
 import About from './About';
 import Add from './Add';
 import Search from './Search';
+import PageNotFound from './PageNotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="search" element={<Search />} />
           </Route>
         </Route>
+        <Route path='*' element={<PageNotFound />}/>
       </Routes>
     </Router>
   );
