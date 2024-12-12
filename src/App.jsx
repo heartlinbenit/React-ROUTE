@@ -1,21 +1,28 @@
-// App.js
+
 import React from 'react';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import HomeLayout from './HomeLayout';
-import Home from './components/Home';
-import Users from './components/Users';
-import About from './components/About';
+import Home from './Home';
+import Users from './Users';
+import About from './About';
+import Add from './Add';
+import Search from './Search';
 
 function App() {
   return (
     <Router>
       <Routes>
-       
+   
         <Route path="/" element={<HomeLayout />}>
-
+          
           <Route path="home" element={<Home />} />
           <Route path="users" element={<Users />} />
-          <Route path="about" element={<About />} />
+          
+          
+          <Route path="about" element={<About />}>
+            <Route path="add" element={<Add />} />
+            <Route path="search" element={<Search />} />
+          </Route>
         </Route>
       </Routes>
     </Router>
