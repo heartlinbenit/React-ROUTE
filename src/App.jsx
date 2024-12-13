@@ -9,6 +9,10 @@ import Add from './Add';
 import Search from './Search';
 import PageNotFound from './PageNotFound';
 
+import UserB from './UserB';
+import UserA from './UserA';
+
+
 function App() {
   return (
     <Router>
@@ -17,9 +21,11 @@ function App() {
         <Route path="/"  element={<HomeLayout />}>
           
           <Route path="home" element={<Home />} />
-          <Route path="users" element={<Users />} />
-          
-          
+          <Route path="users" element={<Users />}>
+             <Route path=":id" />
+             {/* <Route path="users/:id" element={<UserB />} /> */}
+            
+          </Route>
           <Route path="about" element={<About />}>
             <Route path="add" element={<Add />} />
             <Route path="search" element={<Search />} />
